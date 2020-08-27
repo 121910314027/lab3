@@ -1,0 +1,15 @@
+x = float(input(" Enter the first num: "))
+y = float(input(" Enter the second num: "))
+
+while(y !=0):
+    temp = y
+    y = x % y
+    x = temp
+gcd = x
+
+print("GCD of two numbers is", gcd)
+
+output:
+Enter the first num:12
+Enter the second num:36
+GCD of two numbers is 12
