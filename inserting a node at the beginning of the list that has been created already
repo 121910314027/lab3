@@ -1,0 +1,71 @@
+class Node:    
+  def _init_(self,data):    
+    self.data = data;    
+    self.next = None;    
+     
+class CreateList:        
+  def _init_(self):    
+    self.head = Node(None);    
+    self.tail = Node(None);    
+    self.head.next = self.tail;    
+    self.tail.next = self.head;    
+            
+  def addAtStart(self,data):    
+    newNode = Node(data);        
+    if self.head.data is None:        
+      self.head = newNode;    
+      self.tail = newNode;    
+      newNode.next = self.head;    
+    else:        
+        temp = self.head;        
+        newNode.next = temp;        
+        self.head = newNode;      
+        self.tail.next = self.head;    
+        
+  def display(self):    
+    current = self.head;    
+    if self.head is None:    
+      print("List is empty");    
+      return;    
+    else:    
+        print("Adding nodes to the start of the list: ");        
+        print(current.data),    
+        while(current.next != self.head):    
+            current = current.next;    
+            print(current.data),    
+        print("\n");    
+     
+class CircularLinkedList:    
+  cl = CreateList();        
+  cl.addAtStart(1);    
+  cl.display();        
+  cl.addAtStart(2);    
+  cl.display();        
+  cl.addAtStart(3);    
+  cl.display();        
+  cl.addAtStart(4);    
+  cl.display();
+  
+  
+  
+  Output:
+  Adding nodes to the start of the list: 
+1
+
+
+Adding nodes to the start of the list: 
+2
+1
+
+
+Adding nodes to the start of the list: 
+3
+2
+1
+
+
+Adding nodes to the start of the list: 
+4
+3
+2
+1
